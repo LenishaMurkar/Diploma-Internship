@@ -3,57 +3,85 @@ import { FaFacebook, FaInstagram, FaWhatsapp, FaPhone, FaEnvelope } from "react-
 import { IoLocationOutline } from 'react-icons/io5';
 
 const Footer = () => {
-    return (
-        <footer id="contact" className="bg-gray-900 text-gray-300 py-8">
-            <div className="container mx-auto px-4">
-                <div className='flex items-center mb-6 mx-4 sm:mx-8 md:mx-12'>
-                    <a><img src='/Aryanslogo512.webp' className='rounded-xl h-12 m-0 pr-0' /></a>
-                    <h2 className="text-xl font-bold gradient-text ml-4">Aryans Sports and Social Foundation</h2>
-                </div>
-                <div className="flex flex-wrap mx-2 justify-between">
-                    <div className="w-full md:w-1/4 mb-4 md:pl-6">
-                        <h2 className="text-xl font-bold mb-2">Quick Links</h2>
-                        <ul>
-                            <li><a href="#home" className="hover:text-white">Home</a></li>
-                            <li><a href="#about" className="hover:text-white">About Us</a></li>
-                            <li><a href="#team" className="hover:text-white">Our Team</a></li>
-                            <li><a href="#events" className="hover:text-white">Events</a></li>
-                        </ul>
-                    </div>
-                    <div className="w-full md:w-1/4 mb-4">
-                        <h2 className="text-xl font-bold ml-4 mb-1">Contact Us</h2>
-                        <h3 className="text-xl font-bold mt-0">Pimpri</h3>
-                        <ul className="space-y-2">
-                            {/* <li className="flex items-center"><FaEnvelope className="mr-2" /> info@mywebsite.com</li> */}
-                            <li className="flex items-center"><FaPhone className="mr-2" /> 96111112225</li>
-                            <li className="flex items-center"><IoLocationOutline className="mr-2" /> Telco Ground, Ajmera,<br /> Masulkar Colony 411018</li>
-                        </ul>
-                    </div>
-                    <div className="w-full md:w-1/4 mb-4 mt-8">
-                        <h3 className="text-xl font-bold">Krushna Nagar</h3>
-                        <ul className="space-y-2">
-                            {/* <li className="flex items-center"><FaEnvelope className="mr-2" /> info@mywebsite.com</li> */}
-                            <li className="flex items-center"><FaPhone className="mr-2" /> 80000044557</li>
-                            <li className="flex items-center"><IoLocationOutline className="mr-2" /> Krushna Nagar 411018</li>
-                        </ul>
-                    </div>
-                    <div className="w-full md:w-1/4 mb-4">
-                        <h2 className="text-xl font-bold mb-2">Follow Us</h2>
-                        <div className="flex space-x-4">
-                            <a href="https://www.facebook.com/aryans" className="hover:text-blue-800"><FaFacebook size={30} /></a>
-                            <a href="#gmail" className="hover:text-white"><FaEnvelope size={30} /></a>
-                            <a href="https://www.instagram.com/" className="hover:text-fuchsia-700"><FaInstagram size={30} /></a>
-                            <a href="https://wa.me/965555255528?text=Hii%2C%20can%20I%20get%20more%20info%20about%20Aryans%20Sports%20and%20Social%20Foundation"
-                                className="hover:text-green-600"><FaWhatsapp size={30} /></a>
-                        </div>
-                    </div>
-                </div>
-                <div className="mt-4 text-center text-gray-500">
-                    &copy; {new Date().getFullYear()} AryansFCPune. All rights reserved.
-                </div>
+  return (
+    <footer id="contact" className="bg-gray-900 text-gray-300 py-10">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Logo & Name */}
+        <div className="flex items-center mb-6">
+          <img src="/logo192.png" alt="PhysioCare Logo" className="h-12 rounded-lg" />
+          <h2 className="text-xl font-bold ml-4 text-white">PhysioCare Home Services</h2>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+            <ul className="space-y-2">
+              <li><a href="/" className="hover:text-white">Home</a></li>
+              <li><a href="/about" className="hover:text-white">About Us</a></li>
+              <li><a href="/services" className="hover:text-white">Our Services</a></li>
+               <li><a href="/contact" className="hover:text-white">Contact Us</a></li>
+              <li><a href="/book" className="hover:text-white">Book Appointment</a></li>
+              <li><a href="/enquiry" className="hover:text-white">Enquiry Form</a></li>
+              <li>
+                 <a href="https://wa.me/919607460621?text=Hi%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20PhysioCare%20home%20services"
+                 target="_blank" rel="noopener noreferrer"
+                 className="hover:text-white">
+                        Whatsapp
+                     </a>
+               </li>
+               <li><a href="/contact" className="hover:text-white">Request Callback</a></li>
+            </ul>
+          </div>
+
+          {/* Contact 1 */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Pimpri Clinic</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center"><FaPhone className="mr-2" /> +91 96111 12225</li>
+              <li className="flex items-start">
+                <IoLocationOutline className="mr-2 mt-1" />
+                <span>Telco Ground, Ajmera,<br /> Masulkar Colony, Pimpri 411018</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact 2 */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Krushna Nagar Clinic</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center"><FaPhone className="mr-2" /> +91 80000 44557</li>
+              <li className="flex items-center"><IoLocationOutline className="mr-2" /> Krushna Nagar, Pune 411018</li>
+            </ul>
+          </div>
+
+          {/* Social Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Connect with Us</h3>
+            <div className="flex space-x-4">
+              <a href="https://facebook.com/" className="hover:text-blue-500"><FaFacebook size={24} /></a>
+              <a href="mailto:physiocare@email.com" className="hover:text-white"><FaEnvelope size={24} /></a>
+              <a href="https://instagram.com/" className="hover:text-pink-500"><FaInstagram size={24} /></a>
+              <a
+                href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20PhysioCare%20services"
+                className="hover:text-green-500"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp size={24} />
+              </a>
             </div>
-        </footer>
-    );
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 text-center text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} PhysioCare. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
