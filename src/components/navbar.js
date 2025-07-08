@@ -26,7 +26,7 @@ export default function Navbar() {
           <Link to="/book" className="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">Book Now</Link>
           <Link to="/enquiry" className="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">Enquiry</Link>
           <a
-            href="https://wa.me/9100000001?text=Hi%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20PhysioCare%20home%20services"
+            href="https://wa.me/919607460621?text=Hi%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20PhysioCare%20home%20services"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition"
@@ -47,7 +47,7 @@ export default function Navbar() {
           <Link to="/book" onClick={toggleMenu} className="block text-red-900">Book Now</Link>
           <Link to="/enquiry" onClick={toggleMenu} className="block text-red-900 ">Enquiry</Link>
           <a
-            href="https://wa.me/9100000001?text=Hi%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20PhysioCare%20home%20services"
+            href="https://wa.me/919607460621?text=Hi%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20PhysioCare%20home%20services"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-green-600

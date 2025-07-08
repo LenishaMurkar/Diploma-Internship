@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import WhatsAppButton from "./components/WhatsappButton";
 
 export default function App() {
   return (
@@ -14,7 +15,9 @@ export default function App() {
           <AppRoutes />
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </Router>
+    
   );
 }
