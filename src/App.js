@@ -1,14 +1,20 @@
+// App.js
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { AppRoutes } from "./AppRoutes";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <div className="text-3xl font-bold underline text-blue-600">
-        PhysioThreaphy
-       </div>
-      </header>
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <AppRoutes />
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
-
-export default App;
