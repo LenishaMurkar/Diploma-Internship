@@ -9,7 +9,11 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-blue-600">PhysioCare</h1>
+        <Link to="/" className="flex items-center space-x-2">
+  <img src="/logo192.png" alt="PhysioCare Logo" className="h-28 w-25" />
+  <span className="text-xl font-bold text-blue-600">PhysioCare</span>
+</Link>
+
 
         {/* Hamburger Icon */}
         <div className="md:hidden text-2xl text-gray-700" onClick={toggleMenu}>
