@@ -14,11 +14,27 @@ export default function Enquiry() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Connect to backend API here
-    alert("Enquiry submitted successfully!");
-    setForm({ name: "", email: "", phone: "", message: "" });
+
+    try {
+      const response = await fetch("http://localhost/PTHREAPY/server/api/enquire.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        alert("Enquiry submitted successfully!");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (error) {
+      alert("Request failed: " + error.message);
+    }
   };
 
   return (

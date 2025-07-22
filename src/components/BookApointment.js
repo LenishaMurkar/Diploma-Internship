@@ -7,14 +7,31 @@ export default function BookAppointment() {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+   };
+
+ const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost/PTHREAPY/server/api/book.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        alert("Appointment request submitted!");
+        setForm({ name: "", phone: "", date: "", message: "" });
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (error) {
+      alert("Request failed: " + error.message);
+    }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // TODO: Connect to backend API here
-    alert("Appointment request submitted!");
-    setForm({ name: "", phone: "", date: "", message: "" });
-  };
 
   return (
     <div className="max-w-xl mx-auto p-6 mt-8 bg-white shadow-md rounded-xl">

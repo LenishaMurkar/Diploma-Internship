@@ -7,10 +7,27 @@ export default function Contact() {
     setCallbackForm({ ...callbackForm, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Callback request submitted!");
-    setCallbackForm({ name: "", phone: "" });
+
+    try {
+      const response = await fetch("http://localhost/PTHREAPY/server/api/callback.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(callbackForm),
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        alert("Callback request submitted!");
+        setCallbackForm({ name: "", phone: "" });
+      } else {
+        alert("Error: " + result.message);
+      }
+    } catch (error) {
+      alert("Request failed: " + error.message);
+    }
   };
 
   return (
