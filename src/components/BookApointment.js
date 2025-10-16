@@ -40,7 +40,7 @@ export default function BookAppointment() {
         <InputField label="Full Name" type="text" name="name" value={form.name} onChange={handleChange} />
         <InputField label="Phone Number" type="tel" name="phone" value={form.phone} onChange={handleChange} />
         <InputField label="Preferred Date" type="date" name="date" value={form.date} onChange={handleChange} />
-        <InputField label="Message (Optional)" type="text" name="message" value={form.message} onChange={handleChange} />
+        <InputField label="Message" type="text" name="message" value={form.message} onChange={handleChange} />
         <Button type="submit">Submit</Button>
       </form>
     </div>
