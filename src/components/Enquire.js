@@ -2,33 +2,47 @@ import { useState } from "react";
 import InputField from "../components/InputField";
 import Button from "../components/Button";
 
-export default function Enquiry() {
+export default function Enquire() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost/PTHREAPY/server/api/enquire.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const response = await fetch(
+        "https://pthreapy-cloud-backend.onrender.com/api/enquire.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
 
       const result = await response.json();
 
       if (result.status === "success") {
         alert("Enquiry submitted successfully!");
-        setForm({ name: "", email: "", phone: "", message: "" });
+
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
       } else {
         alert("Error: " + result.message);
       }
@@ -39,7 +53,10 @@ export default function Enquiry() {
 
   return (
     <div className="max-w-xl mx-auto p-6 mt-8 bg-white shadow-md rounded-xl">
-      <h2 className="text-2xl font-semibold mb-4 text-center">Enquiry Form</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-center">
+        Enquire Now
+      </h2>
+
       <form onSubmit={handleSubmit}>
         <InputField
           label="Full Name"
@@ -48,13 +65,15 @@ export default function Enquiry() {
           value={form.name}
           onChange={handleChange}
         />
+
         <InputField
-          label="Email Address"
+          label="Email"
           type="email"
           name="email"
           value={form.email}
           onChange={handleChange}
         />
+
         <InputField
           label="Phone Number"
           type="tel"
@@ -62,6 +81,7 @@ export default function Enquiry() {
           value={form.phone}
           onChange={handleChange}
         />
+
         <InputField
           label="Message"
           type="text"
@@ -69,6 +89,7 @@ export default function Enquiry() {
           value={form.message}
           onChange={handleChange}
         />
+
         <Button type="submit">Submit</Button>
       </form>
     </div>
